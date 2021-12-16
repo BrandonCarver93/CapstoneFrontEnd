@@ -14,7 +14,7 @@ class Register extends Component {
 
     registerNewAccount = async (inputObject) => {
         try{
-            let newAccount = await axios.post('http://localhost:3000/api/users/register', inputObject)
+            let newAccount = await axios.post('http://localhost:5000/api/users/register', inputObject)
             console.log(newAccount)
         }
         catch(err){
