@@ -1,7 +1,6 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 
-class LoginForm extends Component{
-
+class LoginForm extends Component {
     constructor(props){
         super(props);
         this.state={
@@ -9,28 +8,25 @@ class LoginForm extends Component{
             password: ""
         }
     }
-
-    handleChange = (event) => {
+    handleChange = (e) => {
         this.setState({
-            [event.target.name]: event.target.value
+            [e.target.name]: e.target.value
         });
     }
-
-    handleSubmit = (event) => {
-        event.preventDefault();
+    handleSubmit = (e) => {
+        e.preventDefault();
         this.props.loginAccount(this.state);
     }
-
     render(){
-        return (
+        return(
             <form onSubmit={this.handleSubmit}>
                 <div>
-                    <label>email</label>
-                    <input name="email" onChange={this.handleChange} value={this.state.email}/>
+                    <label>Email</label>
+                    <input name="email" onChange={this.handleChange} value={this.state.email} />
                 </div>
                 <div>
                     <label>Password</label>
-                    <input name="password" onChange={this.handleChange} value={this.state.password}/>
+                    <input name="password" onChange={this.handleChange} value={this.state.password} />
                 </div>
                 <div>
                     <button type="submit" className="mt-3">Login</button>
@@ -39,5 +35,4 @@ class LoginForm extends Component{
         );
     }
 }
-
 export default LoginForm;

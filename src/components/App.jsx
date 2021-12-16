@@ -1,5 +1,5 @@
 
-import React, {Component} from "react";
+import React, { Component } from "react";
 import { Switch, Route, Link, Redirect } from 'react-router-dom';
 import jwtDecode from 'jwt-decode';
 import Login from './Login/Login';
@@ -36,22 +36,23 @@ class App extends Component {
         console.log(this.state.currentUser)
         return(
             <div>
-               {/*  <Navbar forceRerender={this.checkUser} user = {this.state.currentUser}/> */}
+                <Login />
+              {/*   <Navbar forceRerender={this.checkUser} user = {this.state.currentUser}/> */}
                 <Switch>
-                    <Route path='/' exact render={props => {
+                  {/*   <Route path='/' exact render={props => {
                         if (!this.state.currentUser){
                             return <Redirect to='/register' /> 
                         } else {
                             return <Redirect to='/profile' />
                         }
                     }} />
-                    <Route path='/register' component={Register} />
+                    <Route path='/register' component={Register} /> */}
                     <Route path='/login' component={Login} />
-                    <Route path='/' exact component={Login} />
-                   {/*  <Route path='/profile' component={() => <Profile user={this.state.currentUser}/>} />
+                 {/*    <Route path='/' exact component={Login} />
+                    <Route path='/profile' component={() => <Profile user={this.state.currentUser}/>} />
                     <Route path='/friends' component={Friends} />
                     <Route path='/didNotFind' component={DidNotFind} />
-                    <Redirect to='/didNotFind' /> */}
+                    <Redirect to='/didNotFind' />  */}
                 </Switch>
             </div>
         );
