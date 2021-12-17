@@ -5,6 +5,7 @@ import jwtDecode from 'jwt-decode';
 import Login from './Login/Login';
 import Navbar from './Navbar/Navbar';
 import Register from './Register/Register';
+import Home from './Home/Home';
 import axios from "axios";
 
 class App extends Component {
@@ -14,12 +15,11 @@ class App extends Component {
         this.state = {
             wines: [],
             currentUser: null,
-            wannaReRender: true
         }
     }
     componentDidMount(){
+        this.fetchWines()
        this.checkUser()
-       this.fetchWines()
     }
 
      fetchWines = async () => {
@@ -78,10 +78,10 @@ class App extends Component {
                     <Route path='/register' component={Register} />
                     <Route path='/login' component={Login} />
                     <Route path='/' exact component={Login} />
-                   {/* <Route path='/home' component={() => <Home user={this.state.currentUser}/>} /> */}
-                   {/*  <Route path='/friends' component={Friends} />
+                    <Route path='/home' component={() => <Home user={this.state.currentUser} wines={this.state.wines}/>} />
+                 {/*    <Route path='/friends' component={Friends} />
                     <Route path='/didNotFind' component={DidNotFind} />
-                    <Redirect to='/didNotFind' />  */}
+                    <Redirect to='/didNotFind' /> */} 
                 </Switch>
             </div>
         );
