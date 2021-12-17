@@ -6,6 +6,7 @@ import Login from './Login/Login';
 import Navbar from './Navbar/Navbar';
 import Register from './Register/Register';
 import Home from './Home/Home';
+import MyPalate from './MyPalate/MyPalate';
 import axios from "axios";
 
 class App extends Component {
@@ -79,9 +80,9 @@ class App extends Component {
                     <Route path='/login' component={Login} />
                     <Route path='/' exact component={Login} />
                     <Route path='/home' component={() => <Home user={this.state.currentUser} wines={this.state.wines}/>} />
-                 {/*    <Route path='/friends' component={Friends} />
-                    <Route path='/didNotFind' component={DidNotFind} />
-                    <Redirect to='/didNotFind' /> */} 
+                   {/*  <Route path='/mypalate' component={MyPalate} /> */}
+                  {/*   <Route path='/didNotFind' component={DidNotFind} />
+                    <Redirect to='/didNotFind' />   */}
                 </Switch>
             </div>
         );
