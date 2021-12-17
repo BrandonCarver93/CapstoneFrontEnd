@@ -1,5 +1,6 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
+import SearchBar from '../SearchBar/SearchBar';
 
 const Navbar = (props) => {
 
@@ -8,8 +9,12 @@ const Navbar = (props) => {
         props.forceRerender()
     }
     return(
-        <div>
+        <div className='nav-bar'>
+        <nav class='navbar navbar-expand-lg navbar-dark bg-dark'>
+            <div class='container-fluid'>
+                <a class='navbar-brand' href='http://localhost:3000/'><h3>wineWine</h3></a>
             <ul>
+
                 {!props.user &&
                 <React.Fragment>
                     <li>
@@ -22,15 +27,16 @@ const Navbar = (props) => {
                 }
                 {props.user &&
                 <React.Fragment>
-                    <h4>Welcome, {props.user.name}</h4>
+                    <SearchBar filterWines={props.filterWines} />
                     <li>
+                        <Link to='/mypalate'>My Palate</Link>
                         <Link onClick={() =>logout()} to='/login'>Logout</Link>
-                        <Link to='/winesurvey'>My Palate</Link>
-            
                     </li>
                 </React.Fragment>
                 }
             </ul>
+            </div>
+            </nav>
         </div>
     )
 }

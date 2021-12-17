@@ -1,23 +1,52 @@
 
 import React, { Component } from "react";
-import { Switch, Route, Link, Redirect } from 'react-router-dom';
+import { Switch, Route, Redirect } from 'react-router-dom';
 import jwtDecode from 'jwt-decode';
 import Login from './Login/Login';
 import Navbar from './Navbar/Navbar';
 import Register from './Register/Register';
+import axios from "axios";
 
 class App extends Component {
 
     constructor(props){
         super(props);
         this.state = {
+            wines: [],
             currentUser: null,
             wannaReRender: true
         }
     }
     componentDidMount(){
        this.checkUser()
+       this.fetchWines()
     }
+
+     fetchWines = async () => {
+        try {
+            let response = await axios.get("http://localhost:5000/api/wines");
+            console.log(response);
+            this.setState({
+                wines: response.data,
+            })
+        } catch (err) {
+            console.log(err);
+        }
+    };
+
+    filterWines = (term) => {
+        let filteredWines = this.state.wines.filter((wine) => {
+            return(
+                wine.varietal.toLowerCase().includes(term) ||
+                wine.vineyard.toLowerCase().includes(term)
+            )
+        });
+        this.setState({
+            wines: filteredWines,
+        });
+        console.log(this.state)
+    };
+
     checkUser=()=>{
         const jwt = localStorage.getItem('token');
         try{
@@ -34,16 +63,16 @@ class App extends Component {
         }
     }
     render() {
-        console.log(this.state.currentUser)
         return(
             <div>
-                <Navbar forceRerender={this.checkUser} user = {this.state.currentUser} />
+                <Navbar forceRerender={this.checkUser} user = {this.state.currentUser} 
+                filterWines ={this.filterWines}/>
                 <Switch>
                     <Route path='/' exact render={props => {
                         if (!this.state.currentUser){
-                            return <Redirect to='/register' /> 
+                            return <Redirect to='/home' /> 
                         } else {
-                            return <Redirect to='/home' />
+                            return <Redirect to='/register' />
                         }
                     }} />
                     <Route path='/register' component={Register} />
