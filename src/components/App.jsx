@@ -80,7 +80,7 @@ class App extends Component {
                     <Route path='/login' component={Login} />
                     <Route path='/' exact component={Login} />
                     <Route path='/home' component={() => <Home user={this.state.currentUser} wines={this.state.wines}/>} />
-                   {/*  <Route path='/mypalate' component={MyPalate} /> */}
+                    <Route path='/mypalate' component={MyPalate} /> 
                   {/*   <Route path='/didNotFind' component={DidNotFind} />
                     <Redirect to='/didNotFind' />   */}
                 </Switch>

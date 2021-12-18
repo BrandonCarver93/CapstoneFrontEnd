@@ -24,10 +24,10 @@ const Navbar = (props) => {
                 }
                 {props.user &&
                 <React.Fragment>
-                        <Link to='/mypalate'>My Palate</Link>
+                        <Link to='/mypalate'>Wine Quiz</Link>
                         <Link onClick={() =>logout()} to='/login'>Logout</Link>
                 </React.Fragment>
-                }
+}
             </ul>
             </div>
             </nav>
