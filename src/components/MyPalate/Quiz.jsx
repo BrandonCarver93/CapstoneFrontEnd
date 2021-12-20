@@ -19,15 +19,7 @@ function Quiz(props) {
   }
 
   return (
-    <div
-      className="container"
-      component="div"
-      transitionName="fade"
-      transitionEnterTimeout={800}
-      transitionLeaveTimeout={500}
-      transitionAppear
-      transitionAppearTimeout={500}
-    >
+    <div className="container">
       <div key={props.questionId}>
         <QuestionCount counter={props.questionId} total={props.questionTotal} />
         <Question content={props.question} />

@@ -111,8 +111,8 @@ class MyPalate extends Component {
     }
   
     renderResult() {
-      return <Result quizResult={this.state.result} />;
-    }
+      return <Result quizResult={this.state.result} />
+    };
   
     render() {
       return (

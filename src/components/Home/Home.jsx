@@ -1,6 +1,8 @@
 import React from 'react';
+import MapContainer from '../Map/MapContainer';
 
 const Home = (props) => {
+
     let renderedWines = props.wines.map((wine) => {
         return(
             <div class="card mb-3">
@@ -18,10 +20,12 @@ const Home = (props) => {
     </div>
   </div>
 </div>
+
         );
     });
     return(
         <div>
+            <MapContainer />
         {renderedWines}
         </div>
     );

@@ -26,7 +26,7 @@ class RegisterForm extends Component{
     render(){
         return (
             <form onSubmit={this.handleSubmit}>
-                <div>
+                <div class="card-body">
                     <label>Name:</label>
                     <input name="name" onChange={this.handleChange} value={this.state.name}/>
                 </div>

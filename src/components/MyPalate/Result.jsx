@@ -13,7 +13,7 @@ function Result(props) {
       transitionAppearTimeout={500}
     >
       <div>
-        You prefer <strong>{props.quizResult}</strong>!
+        Based on your answers we recommend {props.quizResult}! as your preferred wine.
       </div>
     </div>
   );

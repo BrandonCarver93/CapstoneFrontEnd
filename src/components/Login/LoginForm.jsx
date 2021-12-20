@@ -20,7 +20,7 @@ class LoginForm extends Component {
     render(){
         return(
             <form onSubmit={this.handleSubmit}>
-                <div>
+                <div class="card-body">
                     <label>Email</label>
                     <input name="email" onChange={this.handleChange} value={this.state.email} />
                 </div>

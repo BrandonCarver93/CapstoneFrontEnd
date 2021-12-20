@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import SearchBar from '../SearchBar/SearchBar';
+import './Navbar.css';
 
 const Navbar = (props) => {
 
@@ -12,7 +13,7 @@ const Navbar = (props) => {
         <div className='nav-bar'>
         <nav className='navbar navbar-expand-lg navbar-light bg-light'>
             <div className='container-fluid'>
-                <a className='navbar-brand' href='http://localhost:3000/'><h3>wineWine</h3></a>
+                <a className='navbar-brand' href='http://localhost:3000/'><h3>just<strong>Wines</strong></h3></a>
                 <SearchBar filterWines={props.filterWines} />
             <ul>
 
@@ -24,6 +25,7 @@ const Navbar = (props) => {
                 }
                 {props.user &&
                 <React.Fragment>
+                        <Link to='/home'>Home</Link>
                         <Link to='/mypalate'>Wine Quiz</Link>
                         <Link onClick={() =>logout()} to='/login'>Logout</Link>
                 </React.Fragment>

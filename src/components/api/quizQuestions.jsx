@@ -4,19 +4,19 @@ const quizQuestions = [
         answers: [
             {
                 type: "Cabernet Sauvignon",
-                content: "I Take my Coffee Black"
+                content: " I Take my Coffee Black"
             },
             {
                 type: "Zinfindel",
-                content: "I Drink my Coffee with milk"
+                content: " I Drink my Coffee with milk"
             },
             {
                 type: "Sauvignon Blanc",
-                content: "I Prefer It with cream and sugar"
+                content: " I Prefer It with cream and sugar"
             },
             {
                 type: "Syrah",
-                content: "I don't drink coffee"
+                content: " I don't drink coffee"
             }
         ]
     },
