@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import AddReviewForm from './ReviewForm';
+import ReviewForm from './ReviewForm';
+import WineRating from '../Rating/Rating';
 
 
 
@@ -9,6 +10,7 @@ class Reviews extends Component {
         super(props);
         this.state = {
            reviews: [],
+           wines: null,
         };
     }
 
@@ -24,10 +26,9 @@ class Reviews extends Component {
       wineReviews = async() => {
         console.log(this.props.reviews)
         try{
-            let response = await axios.get(`http://localhost:5000/api/wines/${this.props.wineId}`)
-            console.log(response.data.reviews)
+            let response = await axios.get(`http://localhost:5000/api/wines/61b90d8d286da17e3828e4b3`)
             this.setState({
-                reviews: response.data
+                reviews: response.data.reviews
             })
         }
         catch(err){
@@ -37,11 +38,11 @@ class Reviews extends Component {
 
     addReview = async(inputReview) => {
         try{
-            let response = await axios.post(`http://localhost:5000/api/wines/${this.props.wineId}/reviews`, inputReview)
+            let response = await axios.post(`http://localhost:5000/api/wines/61b90d8d286da17e3828e4b3/reviews`, {inputReview})
             console.log(response)
             this.state.reviews.push(response)
             this.setState({
-                reviews: this.state.reviews
+                reviews: this.state._id.reviews
             })
         }
         catch(err){
@@ -51,10 +52,10 @@ class Reviews extends Component {
 
     render(){
         console.log(this.state.reviews)
-        const reviews = this.state.reviews 
         return(
             <div className="reviews-container">
-                <AddReviewForm theAddReview = {this.addReview} wineId = {this.props.wineId}/>
+                <WineRating />
+                <ReviewForm addReview = {this.addReview} wineId = {this.props.wineId}/>
             </div>
         )
       }

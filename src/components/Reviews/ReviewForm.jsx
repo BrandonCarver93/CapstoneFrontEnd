@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class AddReviewForm extends Component {
+class ReviewForm extends Component {
     constructor(props){
         super(props);
         this.state = {
@@ -9,14 +9,14 @@ class AddReviewForm extends Component {
         };
     }
 
-    handleChange = (event) => {
+    handleChange = (e) => {
         this.setState({
-            [event.target.name]: event.target.value
+            [e.target.name]: e.target.value
         });
     }
 
-    handleSubmit = (event) => {
-        event.preventDefault();
+    handleSubmit = (e) => {
+        e.preDefault();
         this.props.addReview(this.state);
     }
 
@@ -32,4 +32,4 @@ class AddReviewForm extends Component {
     }
 }
 
-export default AddReviewForm;
+export default ReviewForm;

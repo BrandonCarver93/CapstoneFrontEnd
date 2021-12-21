@@ -11,7 +11,6 @@ class Register extends Component {
         };
     }
 
-
     registerNewAccount = async (inputObject) => {
         try{
             let newAccount = await axios.post('http://localhost:5000/api/users/register', inputObject)
@@ -21,7 +20,6 @@ class Register extends Component {
             console.log("Error creating new account", err)
         }
     }
-
 
     render(){
         return(

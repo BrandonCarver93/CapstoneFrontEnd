@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import Form from 'react-bootstrap/Form';
+import Button from 'react-bootstrap/Button';
 
 class RegisterForm extends Component{
 
@@ -25,23 +27,25 @@ class RegisterForm extends Component{
 
     render(){
         return (
+            <div className="form-wrapper" style={{ width: '30rem' }}>
             <form onSubmit={this.handleSubmit}>
-                <div class="card-body">
-                    <label>Name:</label>
-                    <input name="name" onChange={this.handleChange} value={this.state.name}/>
-                </div>
+                <Form.Group controlId="name">
+                    <Form.Label>Name:</Form.Label>
+                    <Form.Control name="name" onChange={this.handleChange} value={this.state.name} />
+                </Form.Group>
+                <Form.Group controlId="email">
+                    <Form.Label>Email:</Form.Label>
+                    <Form.Control name="email" onChange={this.handleChange} value={this.state.email} />
+                </Form.Group>
+                <Form.Group controlId="password">
+                    <Form.Label>Password:</Form.Label>
+                    <Form.Control name="password" onChange={this.handleChange} value={this.state.password} />
+                </Form.Group>
                 <div>
-                    <label>Email:</label>
-                    <input name="email" onChange={this.handleChange} value={this.state.email}/>
-                </div>
-                <div>
-                    <label>Password:</label>
-                    <input name="password" onChange={this.handleChange} value={this.state.password}/>
-                </div>
-                <div>
-                    <button type="submit" className="mt-3">Create Account</button>
-                </div>
+                    <Button variant="danger" size="lg" type="submit" className="mt-4">Create Account</Button>
+          </div>  
             </form>
+        </div>
         );
     }
 }

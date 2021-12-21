@@ -1,15 +1,14 @@
 import React from 'react';
 import MapContainer from '../Map/MapContainer';
-import WineRating from '../Rating/Rating';
 import Reviews from '../Reviews/Reviews';
 
 
 
 const Home = (props) => {
-
+ 
     let renderedWines = props.wines.map((wine) => {
       return(
-      <div className="Wine">
+      <div className="flex-wrapper">
           <div className="card mb-3" style={{ width: '50rem' }}>
             <div className="row g-5">
               <div className="col-md-4">
@@ -22,7 +21,6 @@ const Home = (props) => {
                   <p className="card-text">{wine.description}</p>
                   <p className="card-text">{wine.pairing}</p>
                   <p className="card-text">{wine.ratings}</p>
-                  <WineRating />
                   <Reviews />
                 </div>
               </div>
