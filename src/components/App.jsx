@@ -7,6 +7,7 @@ import Navbar from './Navbar/Navbar';
 import Register from './Register/Register';
 import Home from './Home/Home';
 import MyPalate from './MyPalate/MyPalate';
+
 import axios from "axios";
 
 class App extends Component {
@@ -65,7 +66,7 @@ class App extends Component {
     }
     render() {
         return(
-            <div>
+            <div className="App">
                 <Navbar forceRerender={this.checkUser} user = {this.state.currentUser} 
                 filterWines ={this.filterWines}/>
                 <Switch>
@@ -81,8 +82,8 @@ class App extends Component {
                     <Route path='/' exact component={Login} />
                     <Route path='/home' component={() => <Home user={this.state.currentUser} wines={this.state.wines}/>} />
                     <Route path='/mypalate' component={MyPalate} /> 
-                  {/*   <Route path='/didNotFind' component={DidNotFind} />
-                    <Redirect to='/didNotFind' />   */}
+                  {/*   <Route path='/NotFound' component={NotFound} />
+                    <Redirect to='/NotFound' />   */}
                 </Switch>
             </div>
         );
