@@ -4,7 +4,7 @@ class AddReviewForm extends Component {
     constructor(props){
         super(props);
         this.state = {
-            videoId: this.props.wineId,
+            wineId: this.props.wineId,
             text: ""
         };
     }
@@ -17,19 +17,19 @@ class AddReviewForm extends Component {
 
     handleSubmit = (event) => {
         event.preventDefault();
-        this.props.theAddComment(this.state);
+        this.props.addReview(this.state);
     }
 
     render(){
         return(
             <div>
                 <form>
-                    <textarea className="form-control comment-textarea" rows="5" type="text" name="text" placeholder="Write a Comment..." onChange={this.handleChange} value={this.state.text}/>
-                    <button className="comment-button" type="submit">Review</button>
+                    <textarea className="form-control review-textarea" rows="2" type="text" name="text" placeholder="Leave a Review..." onChange={this.handleChange} value={this.state.text} />
+                    <button className="review-button" type="submit">Review</button>
                 </form>
             </div>
         )
     }
 }
 
-export default AddReviewForm
+export default AddReviewForm;

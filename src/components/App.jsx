@@ -26,7 +26,7 @@ class App extends Component {
 
      fetchWines = async () => {
         try {
-            let response = await axios.get("http://localhost:5000/api/wines");
+            let response = await axios.get(`http://localhost:5000/api/wines` );
             console.log(response);
             this.setState({
                 wines: response.data,
