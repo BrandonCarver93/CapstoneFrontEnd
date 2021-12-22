@@ -21,6 +21,10 @@ const Home = (props) => {
                   <p className="card-text">{wine.description}</p>
                   <p className="card-text">{wine.pairing}</p>
                   <p className="card-text">{wine.ratings}</p>
+                  {/* <p className="card-text">{wine.reviews}</p> */}
+                  {wine.reviews.map((element)=><>
+                  <p>Rating: {element.rating}</p>
+                  <p>Review: {element.text}</p></>)}
                   <Reviews />
                 </div>
               </div>

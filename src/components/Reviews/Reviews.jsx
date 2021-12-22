@@ -10,7 +10,6 @@ class Reviews extends Component {
         super(props);
         this.state = {
            reviews: [],
-           wines: null,
         };
     }
 
