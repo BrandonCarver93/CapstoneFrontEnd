@@ -12,3 +12,11 @@
 .text-muted {
     margin-left: 20rem;
 }
+
+.card-body{
+    background-color: whitesmoke;
+}
+.reviews{
+    background-color: yellow;
+}
+
