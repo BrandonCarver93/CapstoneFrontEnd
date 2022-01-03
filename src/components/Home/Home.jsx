@@ -14,7 +14,7 @@ const Home = (props) => {
           <div className="card mb-3" style={{ width: '50rem' }}>
             <div className="row g-5">
               <div className="col-md-4">
-                <img url='' className="img-fluid rounded-start" alt="..."/> 
+                <img src='https://www.lcbo.com/content/dam/lcbo/products/467811.jpg/jcr:content/renditions/cq5dam.web.1280.1280.jpeg' className="img-fluid rounded-start" alt="..."/> 
               </div>
               <div className="col-md-8">
                 <div className="card-body">
@@ -23,7 +23,8 @@ const Home = (props) => {
                   <p className="card-text">{wine.description}</p>
                   <p className="card-text">{wine.pairing}</p>
                   <p className="card-text">{wine.ratings}</p>
-                   <div className="card mb-8"><center><h4>Reviews</h4></center>
+                  <center><h4>Reviews</h4></center>
+                   <div className="card mb-8">
                   {wine.reviews.map((element)=><>
                   <WineRating />
                   <p>{element.text}</p></>)}

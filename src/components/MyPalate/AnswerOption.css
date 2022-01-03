@@ -1,0 +1,7 @@
+.answerOption {
+    border-top: 1px solid #eee;
+  }
+  
+  .answerOption:hover {
+    background-color: #eefbfe;
+  }

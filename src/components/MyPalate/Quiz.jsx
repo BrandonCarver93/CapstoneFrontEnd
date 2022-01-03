@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import Question from './Question';
 import QuestionCount from './QuestionCount';
 import AnswerOption from './AnswerOption';
+import './Quiz.css';
 
 function Quiz(props) {
   function renderAnswerOptions(key) {
