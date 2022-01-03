@@ -20,7 +20,6 @@ class MapContainer extends React.Component {
         this.getLocation()
     }
 
-
     getLocation = () => {
         if (navigator.geolocation) {
             navigator.geolocation.getCurrentPosition(this.getCoordinates, this.handleLocationError);
@@ -40,7 +39,7 @@ class MapContainer extends React.Component {
     }
 
     render() {
-        const {longitude, latitude, stores} = this.state
+        const {longitude, latitude} = this.state
         return (
             <div className="Map">
             <Map
