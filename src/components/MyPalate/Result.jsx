@@ -13,7 +13,9 @@ function Result(props) {
       transitionAppearTimeout={500}
     >
       <div>
+        <center>
         Based on your answers we recommend {props.quizResult}! as your preferred wine.
+        </center>
       </div>
     </div>
   );

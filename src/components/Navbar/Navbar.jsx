@@ -15,23 +15,22 @@ const Navbar = (props) => {
             <div className='container-fluid'>
                 <a className='navbar-brand' href='http://localhost:3000/'><h3>Just<strong>Wines</strong></h3></a>
                 <SearchBar filterWines={props.filterWines} />
-            <ul>
-
-                {!props.user &&
+            {!props.user &&
                 <React.Fragment>
                         <Link to='/register'>Register</Link>
                         <Link to='/login'>Login</Link>
                 </React.Fragment>
-                }
-                {props.user &&
+            }
+            {props.user &&
                 <React.Fragment>
-                    <h5>Welcome back, <h6>{props.user.name}</h6></h5>
-                        <Link to='/home'>Home</Link>
-                        <Link to='/mypalate'>Wine Quiz</Link>
-                        <Link onClick={() =>logout()} to='/login'>Logout</Link>
+                    <div className="Nav-barA">
+                        <Link to='/home'> Home </Link>
+                        <Link to='/mypalate'> Wine Quiz </Link>
+                        <Link onClick={() =>logout()} to='/login'> Logout </Link>
+                        </div>
                 </React.Fragment>
-}
-            </ul>
+            }
+            
             </div>
             </nav>
         </div>

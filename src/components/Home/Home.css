@@ -1,6 +1,14 @@
 .Wine {
     width: 540px;
-    margin-left: 60rem;
-
+    margin-left: 49rem;
+    padding-left: 10%;
+    padding-right: 5%;
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
 }
 
+.text-muted {
+    margin-left: 20rem;
+}

@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import axios from 'axios';
 import RegisterForm from './RegisterForm';
 import {Link} from 'react-router-dom';
+import './Register.css'
 
 class Register extends Component {
     constructor(props){
@@ -23,7 +24,7 @@ class Register extends Component {
 
     render(){
         return(
-           <div>
+           <div className="Register">
                <RegisterForm registerNewAccount={this.registerNewAccount}/>
                <Link to='/login'>
                    Already a user? Login Here

@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import LoginForm from './LoginForm';
 import { Link } from 'react-router-dom';
+import "./Login.css";
+
 
 
 class Login extends Component {
@@ -23,7 +25,7 @@ class Login extends Component {
     }
     render(){
         return(
-            <div>
+            <div className="Login">
                 <LoginForm loginAccount={this.loginAccount} />
                 <Link to='/register'>
                     Don't have an account? Register here!

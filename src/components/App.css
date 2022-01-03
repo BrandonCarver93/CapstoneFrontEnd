@@ -1,10 +1,7 @@
-.App {
-    background-image: url('./Images/vineyard-winery-panoramic-view-spring-near-udine-friuli-italy-29858175.jpg');
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-blend-mode: luminosity;
-    position: top;
+
+.header-img {
     width: 100%;
-    overflow-x: hidden;
-}
+    height: 250px;
+    background: url('./Images/vineyard-panorama-26174235.jpg');
+    background-size: cover;
+    }

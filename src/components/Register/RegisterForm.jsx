@@ -21,7 +21,7 @@ class RegisterForm extends Component{
     }
 
     handleSubmit = (e) => {
-        e.preventDefault();
+        e.prevDefault();
         this.props.registerNewAccount(this.state);
     }
 
@@ -39,7 +39,7 @@ class RegisterForm extends Component{
                 </Form.Group>
                 <Form.Group controlId="password">
                     <Form.Label>Password:</Form.Label>
-                    <Form.Control name="password" onChange={this.handleChange} value={this.state.password} />
+                    <Form.Control type="password" name="password" onChange={this.handleChange} value={this.state.password} />
                 </Form.Group>
                 <div>
                     <Button variant="danger" size="lg" type="submit" className="mt-4">Create Account</Button>

@@ -1,0 +1,11 @@
+.Image {
+    background-image: url('../Images/vineyard-panorama-26174235.jpg');
+    image-orientation: top;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-blend-mode: luminosity;
+    position: top;
+    width: 100%;
+    overflow-x: hidden;
+}

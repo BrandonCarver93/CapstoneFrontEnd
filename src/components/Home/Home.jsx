@@ -1,6 +1,8 @@
 import React from 'react';
 import MapContainer from '../Map/MapContainer';
 import Reviews from '../Reviews/Reviews';
+import WineRating from '../Rating/Rating'
+import './Home.css';
 
 
 
@@ -8,11 +10,11 @@ const Home = (props) => {
  
     let renderedWines = props.wines.map((wine) => {
       return(
-      <div className="flex-wrapper">
+      <div className="Wine">
           <div className="card mb-3" style={{ width: '50rem' }}>
             <div className="row g-5">
               <div className="col-md-4">
-                <img url="..." className="img-fluid rounded-start" alt="..."/>
+                <img url='' className="img-fluid rounded-start" alt="..."/> 
               </div>
               <div className="col-md-8">
                 <div className="card-body">
@@ -21,11 +23,12 @@ const Home = (props) => {
                   <p className="card-text">{wine.description}</p>
                   <p className="card-text">{wine.pairing}</p>
                   <p className="card-text">{wine.ratings}</p>
-                  {/* <p className="card-text">{wine.reviews}</p> */}
+                   <div className="card mb-8"><center><h4>Reviews</h4></center>
                   {wine.reviews.map((element)=><>
-                  <p>Rating: {element.rating}</p>
-                  <p>Review: {element.text}</p></>)}
+                  <WineRating />
+                  <p>{element.text}</p></>)}
                   <Reviews />
+                  </div>
                 </div>
               </div>
             </div>

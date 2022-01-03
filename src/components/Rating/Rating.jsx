@@ -4,7 +4,7 @@ import Box from '@material-ui/core/Box';
 
 export default function WineRating() {
 
-const [ratingValue, setRatingValue] = React.useState(0);
+const [ratingValue, setRatingValue] = React.useState(3);
 
 return (
 	<div style={{ display: 'block', padding: 1 }}>

@@ -7,7 +7,7 @@ import Navbar from './Navbar/Navbar';
 import Register from './Register/Register';
 import Home from './Home/Home';
 import MyPalate from './MyPalate/MyPalate';
-
+import './App.css';
 import axios from "axios";
 
 class App extends Component {
@@ -46,7 +46,6 @@ class App extends Component {
         this.setState({
             wines: filteredWines,
         });
-        console.log(this.state)
     };
 
     checkUser=()=>{
@@ -69,6 +68,9 @@ class App extends Component {
             <div className="App">
                 <Navbar forceRerender={this.checkUser} user = {this.state.currentUser} 
                 filterWines ={this.filterWines}/>
+                  <main>
+                    <div className="header-img"></div>
+                </main>
                 <Switch>
                     <Route path='/' exact render={props => {
                         if (!this.state.currentUser){
