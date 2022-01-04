@@ -1,6 +1,6 @@
 .Wine {
     width: 540px;
-    margin-left: 49rem;
+    margin-left: 52rem;
     padding-left: 10%;
     padding-right: 5%;
     position: relative;
@@ -16,7 +16,5 @@
 .card-body{
     background-color: whitesmoke;
 }
-.reviews{
-    background-color: yellow;
-}
+
 

@@ -11,10 +11,6 @@ const Navbar = (props) => {
     }
     return(
         <div className='nav-bar'>
-        <nav className='navbar navbar-expand-lg navbar-light bg-light'>
-            <div className='container-fluid'>
-                <a className='navbar-brand' href='http://localhost:3000/'><h3>Just<strong>Wines</strong></h3></a>
-                <SearchBar filterWines={props.filterWines} />
             {!props.user &&
                 <React.Fragment>
                         <Link to='/register'>Register</Link>
@@ -23,17 +19,37 @@ const Navbar = (props) => {
             }
             {props.user &&
                 <React.Fragment>
-                    <div className="Nav-barA">
-                        <Link to='/home'> Home </Link>
-                        <Link to='/mypalate'> Wine Quiz </Link>
-                        <Link onClick={() =>logout()} to='/login'> Logout </Link>
-                        </div>
+                <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="http://localhost:3000/home"><h3>Just<strong>Wines</strong></h3></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div className ="search">
+        <SearchBar filterWines={props.filterWines} />
+                </div>
+                <div className="navlinks">
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+        <Link className="nav-link" to='/home'> Home </Link>
+        </li>
+        <li class="nav-item">
+        <Link className="nav-link" to='/mypalate'> Wine Quiz </Link>
+        </li>
+        <li class="nav-item">
+        <Link className="nav-link" onClick={() =>logout()} to='/login'> Logout </Link>
+        </li>
+      </ul>
+     
+    </div>
+    </div>
+  </div>
+</nav>
                 </React.Fragment>
             }
-            
-            </div>
-            </nav>
         </div>
     )
 }
 export default Navbar;
+

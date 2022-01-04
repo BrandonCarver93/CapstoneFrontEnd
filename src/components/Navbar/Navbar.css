@@ -1,10 +1,13 @@
-.nav-bar {
-    list-style: none;
-    margin: 0.2px;
-    padding: 0;
-    justify-content: space-around;
+.container-fluid{
+    background-color:whitesmoke;
 }
 
-.Nav-barA {
-    margin-right: 5rem;
+strong{
+    color: black;
 }
+
+.navlinks {
+    margin-left: 40rem;
+}
+
+
