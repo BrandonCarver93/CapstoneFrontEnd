@@ -47,7 +47,7 @@ class ReviewForm extends Component {
   acceptRating = (rates) => {
     this.setState({ rates });
   };
-  render() {
+  render(props) {
     return (
       <div style={{ padding: 13 }}>
         <center>

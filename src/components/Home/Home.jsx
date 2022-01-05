@@ -31,11 +31,11 @@ const Home = (props) => {
               </div>
               <div className="reviews">
                 <center><h4>Reviews</h4></center>
-                <div className="card mb-8">
+                <div className="card">
                     {wine.reviews.map((element)=><>
                     <WineRating ratingValue={element.rating} />
                     <p>{element.text}</p></>)}
-                    <Reviews id={wine}/>
+                    <Reviews id={wine} />
                 </div>
             </div>
         </div>
@@ -45,6 +45,7 @@ const Home = (props) => {
     return(
         <div className="Map-wines">
           <h4><small className="text-muted">Places near you to buy wine.</small></h4>
+          <div id="myMap"></div>
           <MapContainer />
           {renderedWines}
         </div>

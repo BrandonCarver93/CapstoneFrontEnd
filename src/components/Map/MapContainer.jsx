@@ -1,8 +1,10 @@
 import React from "react";
 import { Map, GoogleApiWrapper, Marker } from "google-maps-react";
 import "./Map.css";
+import { InfoWindow } from "@react-google-maps/api";
 let map;
 let service;
+
 class MapContainer extends React.Component {
   constructor(props) {
     super(props);
@@ -10,15 +12,12 @@ class MapContainer extends React.Component {
       latitude: 33.42336,
       longitude: -84.0531968,
       userAddress: null,
-      loader: true,
       stores: [],
     };
   }
   async componentDidMount() {
     this.getLocation();
-    // console.log("called here 1");
-    // this.initialize();
-    // console.log(window);
+    this.initialize();
   }
 
   getLocation = () => {
@@ -42,24 +41,26 @@ class MapContainer extends React.Component {
   };
 
   initialize = () => {
-   // console.log("called here 2");
+   console.log("called here 2");
    const {latitude, longitude } =this.state
     const userLocation = new window.google.maps.LatLng(latitude, longitude);
-
-    map = new window.google.maps.Map(document.getElementById("root"), {
+    map = new window.google.maps.Map(document.getElementById("myMap"),
+  
+    {
       center: userLocation,
       zoom: 15,
     });
-
     const request = {
       location: userLocation,
       radius: "5000",
       type: ["grocery_or_supermarket"],
+      fields: ["name", "rating", "formatted_address", "geometry"]
     };
-
+    
     service = new window.google.maps.places.PlacesService(map);
     service.nearbySearch(request, this.callback);
   };
+ 
   callback = (results, status) => {
     if (status === window.google.maps.places.PlacesServiceStatus.OK) {
       console.log(results, "callback results");
@@ -68,13 +69,10 @@ class MapContainer extends React.Component {
       console.log({ results, status }, 'error object');
     }
   };
-
   render() {
     const { longitude, latitude, stores } = this.state;
-    // console.log(stores, "stores was here ");
     return (
       <div className="Map">
-
           <Map
             google={this.props.google}
             zoom={13}
@@ -85,8 +83,18 @@ class MapContainer extends React.Component {
             }}
           >
               {stores.map((store, index) => {
-                  const { name } = store; 
-                 return  (<Marker key={JSON.stringify(index)} name={name} title={name}/>)
+                console.log(store)
+                  const name = store; 
+                  const lat = store.geometry.location.lat()
+                  const lng = store.geometry.location.lng()
+                  const position = { lat , lng }
+                  console.log(lat,lng);
+                 return  (<Marker
+                  key={JSON.stringify(index)} 
+                  position={position} title={name}/>
+                  
+                  )
+
               })}
           </Map>
       </div>
@@ -94,6 +102,4 @@ class MapContainer extends React.Component {
   }
 }
 
-export default GoogleApiWrapper({
-   apiKey: "AIzaSyCl8cpddceefKFJvWYjy-YXb-VWCncohrc",
-})(MapContainer);
+export default GoogleApiWrapper({ apiKey: "AIzaSyCl8cpddceefKFJvWYjy-YXb-VWCncohrc", })(MapContainer);

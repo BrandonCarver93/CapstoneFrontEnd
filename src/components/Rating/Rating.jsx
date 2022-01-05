@@ -6,7 +6,7 @@ const WineRating = ({ ratingValue }) => {
   return (
     <div>
       <Box align="left" mb={1} borderColor="transparent">
-        <Rating value={ratingValue} name="rating" readOnly={true} />
+      <Rating value={ratingValue} name="rating" readOnly={true} />
       </Box>
     </div>
   );
