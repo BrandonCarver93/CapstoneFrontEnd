@@ -1,0 +1,14 @@
+
+
+.MyPalate {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: auto;
+    background-color: #eef1f8;
+    width: 1000px;
+    min-height: 200px;
+    height: 30em;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 10px 10px 42px 0px rgba(0, 0, 0, 0.75);
+    justify-content: space-evenly;
+  }

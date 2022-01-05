@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import quizQuestions from '../api/quizQuestions';
 import Quiz from './Quiz';
 import Result from './Result';
+import './MyPalate.css'
+
 class MyPalate extends Component {
     constructor(props) {
       super(props);

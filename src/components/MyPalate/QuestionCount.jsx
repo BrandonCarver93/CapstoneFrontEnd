@@ -2,10 +2,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './QuestionCount.css';
 
+
 function QuestionCount(props) {
   return (
     <div className="questionCount">
-     <center> Question <span>{props.counter}</span> of <span>{props.total}</span></center>
+     Question <span>{props.counter}</span> of <span>{props.total}</span>
     </div>
   );
 }

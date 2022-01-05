@@ -1,7 +1,6 @@
 import React from "react";
 import { Map, GoogleApiWrapper, Marker } from "google-maps-react";
 import "./Map.css";
-import { InfoWindow } from "@react-google-maps/api";
 let map;
 let service;
 
@@ -52,8 +51,8 @@ class MapContainer extends React.Component {
     });
     const request = {
       location: userLocation,
-      radius: "5000",
-      type: ["grocery_or_supermarket"],
+      radius: "7000",
+      type: ["supermarket"],
       fields: ["name", "rating", "formatted_address", "geometry"]
     };
     
@@ -91,8 +90,7 @@ class MapContainer extends React.Component {
                   console.log(lat,lng);
                  return  (<Marker
                   key={JSON.stringify(index)} 
-                  position={position} title={name}/>
-                  
+                  position={position} title={name} />
                   )
 
               })}

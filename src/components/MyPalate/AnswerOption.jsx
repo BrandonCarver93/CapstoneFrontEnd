@@ -5,7 +5,6 @@ import './AnswerOption.css';
 function AnswerOption(props) {
   return (
     <div className="answerOption">
-      <center>
       <input
         type="radio"
         className="radioCustomButton"
@@ -16,10 +15,9 @@ function AnswerOption(props) {
         disabled={props.answer}
         onChange={props.onAnswerSelected}
       />
-      <label className="radioCustomLabel" htmlFor={props.answerType}>
+      <label className="button" htmlFor={props.answerType}>
         {props.answerContent}
       </label>
-      </center>
     </div>
   );
 }
