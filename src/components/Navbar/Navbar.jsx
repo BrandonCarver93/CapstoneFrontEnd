@@ -11,12 +11,6 @@ const Navbar = (props) => {
     }
     return(
         <div className='nav-bar'>
-            {!props.user &&
-                <React.Fragment>
-                        <Link to='/register'>Register</Link>
-                        <Link to='/login'>Login</Link>
-                </React.Fragment>
-            }
             {props.user &&
                 <React.Fragment>
                 <nav class="navbar navbar-expand-lg navbar-light bg-light">

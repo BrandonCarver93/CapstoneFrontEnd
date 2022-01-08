@@ -9,7 +9,7 @@ import './Home.css';
 const Home = (props) => {
 
   const changeSource = (e) => {
-    e.target.onerror = null; e.target.src = 'https://www.lcbo.com/content/dam/lcbo/products/467811.jpg/jcr:content/renditions/cq5dam.web.1280.1280.jpeg' 
+    e.target.onerror = null; e.target.src = 'https://www.laverstokepark.co.uk/wp-content/uploads/2018/03/coming-soon-wine.jpg' 
   }
     let renderedWines = props.wines.map((wine) => {
       return(
@@ -17,7 +17,7 @@ const Home = (props) => {
           <div className="card mb-3" style={{ width: '50rem' }}>
             <div className="row g-5">
               <div className="col-md-4">
-                <img onError ={(e)=> changeSource(e)} src={wine.image || 'https://www.lcbo.com/content/dam/lcbo/products/467811.jpg/jcr:content/renditions/cq5dam.web.1280.1280.jpeg'} className="img-fluid rounded-start" alt="..."/> 
+                <img onError ={(e)=> changeSource(e)} src={wine.image || 'https://www.laverstokepark.co.uk/wp-content/uploads/2018/03/coming-soon-wine.jpg'} className="img-fluid rounded-start" alt="..."/> 
               </div>
               <div className="col-md-8">
                 <div className="card-body">
@@ -47,7 +47,7 @@ const Home = (props) => {
           <h4><small className="text-muted">Places near you to buy wine.</small></h4>
           <div id="myMap"></div>
           <MapContainer />
-          {renderedWines}
+          {renderedWines[0]}
         </div>
     );
 };

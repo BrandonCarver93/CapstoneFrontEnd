@@ -21,14 +21,15 @@ class RegisterForm extends Component{
     }
 
     handleSubmit = (e) => {
-        e.prevDefault();
+        e.preventDefault();
         this.props.registerNewAccount(this.state);
     }
 
     render(){
         return (
-            <div className="form-wrapper" style={{ width: '30rem' }}>
+            <div className="reg" style={{ width: '30rem' }}>
             <form onSubmit={this.handleSubmit}>
+            <div className="card-body">
                 <Form.Group controlId="name">
                     <Form.Label>Name:</Form.Label>
                     <Form.Control name="name" onChange={this.handleChange} value={this.state.name} />
@@ -42,8 +43,9 @@ class RegisterForm extends Component{
                     <Form.Control type="password" name="password" onChange={this.handleChange} value={this.state.password} />
                 </Form.Group>
                 <div>
-                    <Button variant="danger" size="lg" type="submit" className="mt-4">Create Account</Button>
-          </div>  
+                    <Button variant="danger" size="lg" type="submit" className="mt-3">Create Account</Button>
+          </div> 
+          </div> 
             </form>
         </div>
         );

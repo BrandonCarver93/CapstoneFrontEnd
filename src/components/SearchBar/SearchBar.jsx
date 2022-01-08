@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-
+import Button from 'react-bootstrap/Button';
+import './SearchBar.css';
 
 class SearchBar extends Component {
     constructor(props) {
@@ -20,11 +21,13 @@ class SearchBar extends Component {
     };
     render() {
         return(
+            <div className="search">
             <div className='collapse navbar-collapse' id='navbarSupportedContent'>
                 <form onSubmit={this.handleSubmit} className="d-flex">
-                       <input type="search" placeholder="Search" aria-label='Search' name='term' value={this.state.term} onChange={this.handleChange} /> 
-                       <button class="btn btn-outline-success" type="submit">Search</button>
+                       <input type="search" size="70" placeholder="Search" aria-label='Search' name='term' value={this.state.term} onChange={this.handleChange} /> 
+                       <Button class="btn btn-outline-success" type="submit">Search</Button>
                 </form>
+            </div>
             </div>
         )};
 }

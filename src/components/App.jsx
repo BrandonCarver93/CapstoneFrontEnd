@@ -21,7 +21,7 @@ class App extends Component {
     }
     componentDidMount(){
         this.fetchWines()
-       this.checkUser()
+        this.checkUser()
     }
 
      fetchWines = async () => {
@@ -72,7 +72,7 @@ class App extends Component {
                     <div className="header-img"></div>
                 </main>
                 <Switch>
-                    <Route path='/' exact render={props => {
+                    <Route path='/' exact render={() => {
                         if (!this.state.currentUser){
                             return <Redirect to='/home' /> 
                         } else {

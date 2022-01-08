@@ -7,12 +7,12 @@ class ReviewForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      reviews: [],
       text: "",
       rates: 0,
       ratingValue: 0,
     };
   }
-
   handleChange = (event) => {
     this.setState({
       [event.target.name]: event.target.value,
@@ -20,10 +20,7 @@ class ReviewForm extends Component {
   };
 
   handleSubmit = async (event) => {
-    event.preventDefault()
-    // this.props.addReview(this.state.text, this.state.ratingValue);
     try {
-      console.log(this.props.wineId, "here");
       let review = {
         text: `${this.state.text}`,
         rating: this.state.ratingValue,
@@ -32,13 +29,13 @@ class ReviewForm extends Component {
         `http://localhost:5000/api/wines/${this.props.wineId}/reviews`,
         review
       );
-      if (response.status === 200) {
         this.state.reviews.push(response)
+        console.log(response);
         return this.setState({
-          reviews: response.data,
+          reviews: this.state.reviews,
           ratingValue: 0,
         });
-      }
+      
     } catch (err) {
       console.log(err, "Error posting new review", err?.response?.data);
     }
@@ -47,7 +44,7 @@ class ReviewForm extends Component {
   acceptRating = (rates) => {
     this.setState({ rates });
   };
-  render(props) {
+  render() {
     return (
       <div style={{ padding: 13 }}>
         <center>

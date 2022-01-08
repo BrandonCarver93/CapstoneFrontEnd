@@ -1,12 +1,7 @@
 .Wine {
-    width: 540px;
     margin-left: 52rem;
     padding-left: 10%;
-    padding-right: 5%;
-    position: relative;
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
+    /* position: relative; */
 }
 
 .text-muted {
@@ -16,6 +11,7 @@
 .card-body{
     background-color: whitesmoke;
 }
+
 
 
 
