@@ -7,6 +7,7 @@ import Navbar from './Navbar/Navbar';
 import Register from './Register/Register';
 import Home from './Home/Home';
 import MyPalate from './MyPalate/MyPalate';
+import Footer from './Footer/Footer'
 import './App.css';
 import axios from "axios";
 
@@ -87,6 +88,7 @@ class App extends Component {
                   {/*   <Route path='/NotFound' component={NotFound} />
                     <Redirect to='/NotFound' />   */}
                 </Switch>
+                <Footer />
             </div>
         );
     }

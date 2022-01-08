@@ -25,7 +25,7 @@ class SearchBar extends Component {
             <div className='collapse navbar-collapse' id='navbarSupportedContent'>
                 <form onSubmit={this.handleSubmit} className="d-flex">
                        <input type="search" size="70" placeholder="Search" aria-label='Search' name='term' value={this.state.term} onChange={this.handleChange} /> 
-                       <Button class="btn btn-outline-success" type="submit">Search</Button>
+                       <Button variant="danger" class="btn btn-outline-success" type="submit">Search</Button>
                 </form>
             </div>
             </div>

@@ -1,0 +1,10 @@
+.footer {
+    background-color: whitesmoke;
+    width: 100%;
+    margin-top: 1em;
+    text-align: left;
+    padding-left: 20em;
+    position: relative;
+    bottom: -14.5em;
+    overflow-x: hidden;
+}

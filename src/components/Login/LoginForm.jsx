@@ -35,7 +35,7 @@ class LoginForm extends Component {
                         <Form.Control type="password" name="password" onChange={this.handleChange} value={this.state.password} />
                     </Form.Group>
                     <div>
-                        <Button variant="danger" size="lg" type="submit" className="mt-4">Login</Button>
+                        <Button variant="danger" size="lg" type="submit" className="mt-3">Login</Button>
               </div>  
               </div>
                 </form>
