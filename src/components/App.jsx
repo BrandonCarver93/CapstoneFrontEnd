@@ -85,8 +85,6 @@ class App extends Component {
                     <Route path='/' exact component={Login} />
                     <Route path='/home' component={() => <Home user={this.state.currentUser} wines={this.state.wines}/>} />
                     <Route path='/mypalate' component={MyPalate} /> 
-                  {/*   <Route path='/NotFound' component={NotFound} />
-                    <Redirect to='/NotFound' />   */}
                 </Switch>
                 <Footer />
             </div>
